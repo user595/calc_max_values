@@ -15,6 +15,10 @@ using namespace std;
 int
 main ()
 {
+  //code to format numbers with seperators
+  std::locale loc("");//get default locale
+  std::cout.imbue(loc);//set cout locale
+    
   unsigned char uc = 0;
   unsigned int ui = 0;
   unsigned short int usi = 0;
@@ -41,12 +45,12 @@ main ()
   //char is displayed as a character not an integer value
   //unless cast to integer
   cout << "Maximum values for data types:\n";
-  cout << "uc unsigned character value:" << int (uc) << endl;
-  cout << "ui unsigned integer value:" << ui << endl;
-  cout << "usi unsigned short integer value:" << usi << endl;
-  cout << "si signed integer value:" << si << endl;
-  cout << "sc short character value:" << int (sc) << endl;
-  cout << "ssi signed short integer value:" << ssi << endl;
+  cout << "uc unsigned character value (" << UCHAR_MAX << "): " << int (uc) << endl;
+  cout << "ui unsigned integer value (" << UINT_MAX << "): " << ui << endl;
+  cout << "usi unsigned short integer value (" << USHRT_MAX << "): " << usi << endl;
+  cout << "si signed integer value (" << INT_MAX << "): " << si << endl;
+  cout << "sc short character value (" << SCHAR_MAX	 << "): " << int (sc) << endl;
+  cout << "ssi signed short integer value (" << SHRT_MAX << "): " << ssi << endl;
   
   return 0;
 }
